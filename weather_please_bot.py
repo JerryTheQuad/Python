@@ -14,12 +14,12 @@ from pyowm import OWM
 import telebot
 
 
-owm = OWM('708c7a4d5f293058b24273505d91e26a', language='ru')
-obs = owm.weather_at_place('Брянск,РФ')
+owm = OWM()
+obs = owm.weather_at_place()
 w = obs.get_weather()
 w.get_temperature(unit='celsius')
 
-bot = telebot.TeleBot("1378585680:AAGf7inMDvfjsf8DC51dczc_i8l-OHcVZWw")
+bot = telegram.TeleBot()
 
 @bot.message_handler(commands=['start', 'help'])
 def commands(message):
